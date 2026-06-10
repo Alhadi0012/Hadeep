@@ -64,7 +64,7 @@ export default function Hero() {
         display: "flex",
         alignItems: "center",
         overflow: "hidden",
-        background: "var(--grad-hero)",
+        background: "#0A1628",
         paddingTop: 68,
       }}
     >
@@ -72,12 +72,46 @@ export default function Hero() {
       <DotGrid />
 
       {/* Ambient color blobs */}
-      <div aria-hidden="true" style={{
-        position: "absolute", top: "-10%", right: "-5%",
-        width: 560, height: 560,
-        background: "radial-gradient(circle, rgba(41,182,246,0.15) 0%, transparent 65%)",
-        pointerEvents: "none",
-      }} />
+      {/* Full background image */}
+<img
+  src={heroImg}
+  alt=""
+  aria-hidden="true"
+  style={{
+    position: "absolute",
+    inset: 0,
+    width: "100%",
+    height: "100%",
+    objectFit: "cover",
+    objectPosition: "center top",
+    zIndex: 0,
+  }}
+/>
+
+{/* Dark overlay for text readability */}
+{/* Full background image */}
+<img
+  src={heroImg}
+  alt=""
+  aria-hidden="true"
+  style={{
+    position: "absolute",
+    inset: 0,
+    width: "100%",
+    height: "100%",
+    objectFit: "cover",
+    objectPosition: "center top",
+    zIndex: 0,
+  }}
+/>
+
+{/* Dark overlay for text readability */}
+<div aria-hidden="true" style={{
+  position: "absolute",
+  inset: 0,
+  zIndex: 1,
+  background: "linear-gradient(to right, rgba(10,22,40,0.92) 0%, rgba(10,22,40,0.75) 50%, rgba(10,22,40,0.30) 100%)",
+}} />
       <div aria-hidden="true" style={{
         position: "absolute", bottom: "5%", left: "-8%",
         width: 480, height: 480,
@@ -94,6 +128,8 @@ export default function Hero() {
       {/* Content */}
       <div
         style={{
+          position: "relative",
+          zIndex: 3,
           maxWidth: "var(--max-width)",
           margin: "0 auto",
           width: "100%",
@@ -142,7 +178,7 @@ export default function Hero() {
               fontSize: "clamp(36px, 5.5vw, 68px)",
               fontWeight: 800,
               lineHeight: 1.05,
-              color: "#0A1628",
+              color: "#FFFFFF",
               marginBottom: 24,
               letterSpacing: "-0.025em",
               ...show(350),
@@ -174,7 +210,7 @@ export default function Hero() {
             style={{
               fontFamily: "var(--font-body)",
               fontSize: "clamp(15px, 1.6vw, 18px)",
-              color: "#475569",
+              color: "rgba(255,255,255,0.80)",
               lineHeight: 1.75,
               maxWidth: 520,
               marginBottom: 44,
@@ -261,7 +297,7 @@ export default function Hero() {
                   display: "flex", alignItems: "center", gap: 7,
                   fontFamily: "var(--font-display)",
                   fontSize: 11, fontWeight: 700,
-                  color: "#64748B",
+                  color: "rgba(255,255,255,0.65)",
                   letterSpacing: "0.06em",
                 }}
               >
